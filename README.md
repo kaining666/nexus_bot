@@ -40,7 +40,7 @@ token3
 
 运行机器人:
 ```bash
-python3 main.py
+python3 bot.py
 
 input 从哪开始
 input 到哪结束
