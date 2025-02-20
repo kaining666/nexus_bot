@@ -13,7 +13,7 @@ def work(private_key):
     browser = Chromium(addr_or_opts=co)
     tab1 = browser.new_tab()
     #等待插件加载
-    tab1.wait(8)
+    tab1.wait(10)
     logger.info('打开okx钱包页面')
     wallet_login = login_with_private_key(private_key=private_key, page_info=tab1)
     if not wallet_login:
@@ -90,7 +90,10 @@ if __name__ == '__main__':
                 # 输出对应行数的数据
                 for line in lines[a - 1:b]:  # 使用切片获取a到b行（包含a, 不包含b）
                     logger.info(f'开始挂机，私钥为：{line.strip()}')
-                    work(private_key=line.strip())
+                    try:
+                        work(private_key=line.strip())
+                    except:
+                        logger.error("挂机失败")
             else:
                 logger.error("输入的行数超出了文件的范围")
     except FileNotFoundError:
