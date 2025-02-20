@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## 📝 预先准备工作
 
-1. 代理  新建 `private_key.txt` :
+1. 钱包私钥文件  `private_key.txt` :
 ```
 token1
 token2
